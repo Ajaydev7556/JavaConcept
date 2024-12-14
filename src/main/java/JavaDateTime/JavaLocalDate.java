@@ -2,7 +2,7 @@ package JavaDateTime;
 
 import java.time.LocalDate;
 
-public class JavaDateTime {
+public class JavaLocalDate {
 	
 	public static void main(String[] args) {
 		
@@ -28,6 +28,12 @@ public class JavaDateTime {
 	System.out.println("\n\nPrint Yesterday : "+date.minusDays(1));
 	
 	System.out.println("\n\nPrint Date of previous Week : "+date.minusDays(7));
+	
+	System.out.println("\n\nPrint Date of previous 10 months : "+date.minusMonths(10));
+	
+	LocalDate parse = LocalDate.parse("2012-07-25");
+	
+	System.out.println("\nParse Date : "+parse);
 	}
 
 }
