@@ -1,6 +1,7 @@
 package JavaDateTime;
 
 import java.time.Instant;
+import java.time.ZoneId;
 
 public class JavaInstant {
 	
@@ -14,6 +15,11 @@ public class JavaInstant {
 		Instant now = Instant.now();
 		
 		System.out.println("\n\nInstant : "+now);
+		
+		System.out.println("\n\nGet Epoch Seconds : "+now.getEpochSecond());
+		
+		
+		System.out.println("\n\nGet Time with Zone : "+now.atZone(ZoneId.of("Israel")));
 	}
 
 }
