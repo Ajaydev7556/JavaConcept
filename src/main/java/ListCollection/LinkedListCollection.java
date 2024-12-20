@@ -1,5 +1,6 @@
 package ListCollection;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 public class LinkedListCollection {
@@ -24,6 +25,23 @@ public class LinkedListCollection {
 	
 	linkedlist.addLast("TEST7");
 	System.out.println("\n\nAfter using addLast() \n"+linkedlist);
+	
+	linkedlist.remove("TEST3");
+	System.out.println("\n\nAfter using Remove method : \n"+linkedlist);
+	
+	
+	LinkedList<Integer> numbers = new LinkedList<>(Arrays.asList(10,20,30,40,50,60));
+	
+	LinkedList<Integer> numbersToRemove = new LinkedList<>(Arrays.asList(20,50));
+	
+	System.out.println("\n\nNumber List ==>\n"+numbers);
+	
+	numbers.removeAll(numbersToRemove);
+	System.out.println("Number List after using RemoveAll()\t Number target: "+numbersToRemove+" ==>");
+	System.out.println(numbers);
+	
+	
+	
 		
 	}
 	
