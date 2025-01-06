@@ -31,11 +31,11 @@ class ValidateEmail
         
         if(!(email.matches(emailRegex)))
         {
-        	throw new Exception("Invalid email!");
+        	throw new Exception(email+" : Invalid email!");
         }
         else
         {
-        	System.out.println("Email Address Accepted");
+        	System.out.println(email+" : Email Address Accepted");
         }
         
 	}
@@ -50,13 +50,21 @@ class GetUserInfo extends ValidateEmail implements CustomMethod
 		this.email = email;
 	}
 	
-	public void getUserInfo() throws Exception{
-				
-		System.out.println("Test Email : "+email);
-		validatEmail(email);
-		
+	@Override
+	public String toString()
+	{
+		return email;
 	}
-	
+
+	@Override
+	public void getUserInfo() throws Exception {
+		try {
+			validatEmail(email);
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}		
+	}
 }
 
 
@@ -69,22 +77,18 @@ class CustomMethodAccess<T extends ValidateEmail & CustomMethod>
 		this.email = email;
 	}
 	
-	public Object getEmail()
+	public String getEmail()
 	{
 		
-		String emailAsString = email.toString();
-		System.out.println(emailAsString);
-		return emailAsString.toString();
+		return email.toString();
 	}
+	
 	
 	GetUserInfo setData = new GetUserInfo();
 	
 	public void assignUserData()
 	{
-		System.out.println("Method call");
-//		setData.setUserinfo1(getEmail());
-		System.out.println(getEmail());
-		System.out.println("Method call end");
+		setData.setUserinfo1(getEmail());
 	}
 	
 }

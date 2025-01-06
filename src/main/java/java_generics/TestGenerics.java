@@ -31,18 +31,6 @@ public class TestGenerics {
 		StringContainer<String> containerValue = new StringContainer<>();
 		containerValue.addEmail("test@yopmail.com");
 		System.out.println("\n\nEmail : "+containerValue.getEmail());
-		
- 
-		CustomMethodAccess<GetUserInfo> customMethodAccess = new CustomMethodAccess<>();
-		
-		String email = "Test@yopmail.com";
-		
-		GetUserInfo userInfo = new GetUserInfo();
-		userInfo.setUserinfo1(email);
-		
-		customMethodAccess.setUserinfo2(userInfo);
-		customMethodAccess.assignUserData();
-		
 
 	}
 

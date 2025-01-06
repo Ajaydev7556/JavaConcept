@@ -3,7 +3,7 @@ package java_generics;
 
 public class JavaBoundedParaGenericTest {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		JavaBoundedParaGeneric<Long> boundedTest = new JavaBoundedParaGeneric<>();
 		
@@ -14,19 +14,17 @@ public class JavaBoundedParaGenericTest {
 		
 		
 		// Java Bounded Type Parameter Generic with extends class and interface
+
+		CustomMethodAccess<GetUserInfo> customMethodAccess = new CustomMethodAccess<>();
 		
-//		CustomMethodAccess<String> accessCustom = new CustomMethodAccess<>();
-//		
-//		accessCustom.setUserinfo("Ajay", "Kumar");
-//		
-//		String [] data = accessCustom.getUserInfo1();
-//		
-//		for( String user_data : data)
-//		{
-//			System.out.println(user_data);
-//		}
+		String email = "Test@yopmail.com";
 		
+		GetUserInfo userInfo = new GetUserInfo();
+		userInfo.setUserinfo1(email);
 		
+		customMethodAccess.setUserinfo2(userInfo);
+		customMethodAccess.assignUserData();
+		userInfo.getUserInfo();
 	}
 
 }
